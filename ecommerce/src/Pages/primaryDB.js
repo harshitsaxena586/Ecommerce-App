@@ -5,6 +5,7 @@ export const AllProducts = [{
         img: "https://ik.imagekit.io/harshit/MainFrame_ivSzElzb1.png",
         description: "lorem ipusum",highlights:"lorem imspum",
         price: 64000,
+        shipping:0,
         inStock: true,
         type: "graphics card"
     },
@@ -14,6 +15,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"8GB Memory ",
         price: 45000,
+        shipping:0,
         inStock: true,
         type: "graphics card"
     }, {
@@ -22,14 +24,16 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 36000,
+        shipping:500,
         inStock: true,
-        type: "graphics card"
+        type: "case"
     }, {
         name: "Lian li O11 ",
         img: "https://ik.imagekit.io/harshit/Lian_li_o11_q34_HmCnD.png",
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 15000,
+        shipping:500,
         inStock: true,
         type: "case"
     }, {
@@ -38,6 +42,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 26000,
+        shipping:500,
         inStock: true,
         type: "case"
     }, {
@@ -46,6 +51,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 60000,
+        shipping:0,
         inStock: true,
         type: "proccessor"
     },
@@ -55,22 +61,25 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 12000,
+        shipping:0,
         inStock: true,
-        type: "graphics card"
+        type: "aio"
     }, {
-        name: "Samsung evo 970 1Tb",
+        name: "Samsung evo 970",
         img: "https://ik.imagekit.io/harshit/Samsung_Evo_J0WbL1QFl.png",
         description: "lorem ipusum",
-        highlights:"lorem imspum",
+        highlights:" 1Tb Nvme SSD",
         price: 10000,
+        shipping:0,
         inStock: true,
-        type: "nvme ssd"
+        type: "storage"
     }, {
         name: "Nvidia RTX 3090",
         img: "https://ik.imagekit.io/harshit/Coming_soon_b0ZDxYm8p.png",
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 120000,
+        shipping:0,
         inStock: true,
         type: "graphics card"
     }, {
@@ -79,6 +88,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"",
         price: 8550,
+        shipping:500,
         inStock: true,
         type: "Cabinet"
     }, {
@@ -87,6 +97,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 50000,
+        shipping:0,
         inStock: true,
         type: "proccessor"
     }, {
@@ -95,6 +106,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 18000,
+        shipping:0,
         inStock: true,
         type: "proccessor"
     }, {
@@ -103,6 +115,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 39000,
+        shipping:0,
         inStock: true,
         type: "proccessor"
     }, {
@@ -111,6 +124,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 85000,
+        shipping:0,
         inStock: true,
         type: "graphics card"
     },  {
@@ -119,6 +133,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 6000,
+        shipping:5000,
         inStock: true,
         type: "case"
     }, {
@@ -127,6 +142,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 12000,
+        shipping:0,
         inStock: true,
         type: "processor"
     }, {
@@ -135,6 +151,7 @@ export const AllProducts = [{
         description: "lorem ipusum",
         highlights:"lorem imspum",
         price: 64000,
+        shipping:0,
         inStock: true,
         type: "graphics card"
     },

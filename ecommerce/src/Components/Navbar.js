@@ -1,11 +1,12 @@
 import react from "react"
 import {Routes,  Route,Link} from 'react-router-dom';
+import { useApp } from "../context/App-context";
 import Cart from "../Pages/Cart";
 import Home from "../Pages/Home";
 
 
 export default function Navbar(){
-    
+    const {data,setData}=useApp()
     return (
       
     <nav>
@@ -14,17 +15,11 @@ export default function Navbar(){
     </div>
     
     <ul class="list-tag">
-      <li> <Link to="/">Home</Link></li>
+      <li> <Link to="/">Home</Link></li><li> <Link to="products">Products </Link></li>
       <li> <Link to="cart">Cart </Link></li>
       <li> <Link to="cart">Wishlist </Link></li>
-      <li> <Link to="cart">Login </Link></li>
-      <li> <Link to="products">Products </Link></li>
+      <li className="login-nav"> <Link to="login">Login </Link></li>
     </ul>
   </nav>
-    )
-       
- 
+ )
 }
-
-    // <input type="text" class="input-search" placeholder="Search" name="search"></input>
-// 

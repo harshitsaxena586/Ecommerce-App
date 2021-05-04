@@ -1,55 +1,88 @@
-import react, { useState } from "react";
+import react, { useEffect, useReducer, useState } from "react";
+import { useApp } from "../context/App-context";
+import { AllProducts } from "../Pages/primaryDB";
 
-export default function ProductFilter({
-  src,
-  title,
-  price,
-  highlights,
-  wishlist
-}) {
-  const [inputPrice, setInputPice] = useState(150);
+export default function ProductFilter() {
+    const [inputPrice, setInputPice] = useState(150);
+
+    // ------ data sorting---------
+      const getSordtedData =(productList,sortby)=>{
+          if(sortby && sortby=="LOWtoHIGH"){
+          return ([...productList].sort((a,b)=>a.price -b.price))
+          }
+  
+          if(sortby && sortby=="HIGHtoLOW"){
+              return ([...productList].sort((a,b)=>b.price -a.price))
+          }
+    }
+    // Data filter 
+      const getFilteredData =(productList,category)=>{
+        if(state.category==null && state.sortby!=null){
+          return productList
+        }
+        
+        return productList.filter(item=>item.type == category)
+    }
+const {state,dispatch}=useApp()
+console.log(state)
+
+
+
+  const sortedData = getSordtedData(state.products,state.sortby)
+  const filteredData = getFilteredData(sortedData ==null?state.products:sortedData,state.category)
+      // console.log(filteredData)
+
+      useEffect(()=>dispatch({type:"FILTERAPPLIED",payload:filteredData}),[state.sortby,state.category])
+
   return (
-    <div className="filter-wrap">
-      <div className="price-filter">
-      {console.log(inputPrice)}
-      <h1>Price Range</h1>
-        <input
-          type="range"
-          min="2"
-          max="150"
-          step="4"
-          onChange={(e) => setInputPice(() => e.target.value)}
-        />
-      </div>
-      <div className="categories-filter">
-        <label for="cabinet">
-          <input type="radio" id="cabinet" name="categories" value="huey" />{" "}
-          <span className="category-text">Cabinets</span>{" "}
-        </label>
+        <div className="filter-wrap" >
 
-        <label>
-          {" "}
-          <input type="radio" id="huey" name="categories" value="huey" />{" "}
-          <span className="category-text">Graphics Card</span>{" "}
-        </label>
-
-        <label>
-          <input type="radio" id="huey" name="categories" value="huey" />
-          <span className="category-text">Proccessor</span>{" "}
-        </label>
-
-        <label>
-          {" "}
-          <input type="radio" id="huey" name="categories" value="huey" />{" "}
-          <span className="category-text">Storage</span>
-        </label>
-
-        <label>
-          {" "}
-          <input type="radio" id="huey" name="categories" value="huey" />{" "}
-          <span className="category-text"> AIO</span>
-        </label>
-      </div>
-    </div>
-  );
-}
+          {/* ----------Sorting ----------- */}
+          <div className="sorting-products">
+            <h1>
+              Sort by 
+            </h1>
+            <label><input type="radio" name="sort" onChange={()=>dispatch({type:"SORT",payload:"LOWtoHIGH"})}/> <span className="sorting-text">Low to High</span>
+            </label>
+            <label> <input type="radio" name="sort" onChange={()=>dispatch({type:"SORT",payload:"HIGHtoLOW"})}/> <span className="sorting-text">High To Low</span>
+            </label>
+          </div>
+    
+          
+          <div className="categories-filter">
+          <h1>
+              Categories
+          </h1>
+              <label for="cabinet">
+              <input type="radio" id="cabinet" name="categories" 
+              onChange={()=>dispatch({type:"category-filter",payload:"case"})} />{" "}
+              <span className="category-text">Cabinets</span>{" "}
+            </label>
+    
+            <label>
+              {" "}
+              <input type="radio" id="huey" name="categories" onChange={()=>dispatch({type:"category-filter",payload:"graphics card"})} />{" "}
+              <span className="category-text">Graphics Card</span>{" "}
+            </label>
+    
+            <label>
+              <input type="radio" id="proccessor" name="categories" onChange={()=>dispatch({type:"category-filter",payload:"proccessor"})} />
+              <span className="category-text">Proccessor</span>{" "}
+            </label>
+    
+            <label>
+              {" "}
+              <input type="radio" id="huey" name="categories" onChange={()=>dispatch({type:"category-filter",payload:"storage"})} />{" "}
+              <span className="category-text">Storage</span>
+            </label>
+    
+            <label>
+              {" "}
+              <input type="radio" id="huey" name="categories" onChange={()=>dispatch({type:"category-filter",payload:"aio"})} />{" "}
+              <span className="category-text"> AIO</span>
+            </label>
+          </div>
+        </div>
+      );
+    }
+    

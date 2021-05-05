@@ -286,7 +286,8 @@ body {
   width: 20vw;
   padding: 1.5rem;
   margin: 2.5rem 0;
-  height: 26vh;
+
+  height: max-content;
   background: #fff;
   border-radius: 24px;
 }
@@ -358,13 +359,6 @@ input[type="password"] {
   border-radius: 8px;
   border: none;
 }
-/* -------mobile styling */
-@media screen and (max-width: 740px) {
-  .login-div input {
-    min-width: 18.75rem;
-  }
-}
-
 .my-success {
   min-width: 600px;
 }
@@ -375,7 +369,6 @@ nav {
 }
 nav a:visited .login-nav {
   color: red;
-
 }
 nav a:any-link {
   color: #1d1c1c;
@@ -384,6 +377,53 @@ nav a:any-link {
   font-family: var(--font-seconday);
 }
 
-nav a:active{
+nav a:active {
   color: var(--gradient-bg);
+}
+.clear {
+  background: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.clear h1 {
+  margin: 0;
+  padding: 0;
+}
+.clear:hover {
+  transform: translate(0, -15px);
+  transition: all ease-in 150ms;
+}
+/* -------mobile styling */
+@media screen and (max-width: 740px) {
+  .login-div input {
+    min-width: 18.75rem;
+  }
+  .filter-wrap {
+    display: none;
+  }
+  .product-wrap {
+    margin: 0;
+  }
+  .zero {
+    margin: 0;
+    padding: 0;
+    background: red;
+  }
+  .product-card {
+    max-width: 186px;
+    margin: 1rem 6px;
+    padding: 8px;
+  }
+  .product-wrap :nth-child(){
+    background:red;
+  }
+  .product-card h1{
+    font-size: 17px;
+    margin-right: 0;
+  }
+  .product-card h3{
+    margin-right: 0;
+    font-size: 17px;
+  }
 }

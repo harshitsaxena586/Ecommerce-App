@@ -7,10 +7,8 @@ export default function Login() {
   return <div className="login-body">
 
     {showLogin?<LoginComponent />: <SignUp/>}
-    {/* <div> */}
-    <button  className="login-state" onClick={()=>setShowLogin(!showLogin)}>{showLogin?"Sign Up":"Login"}</button>
 
-    {/* </div> */}
+    <button  className="login-state" onClick={()=>setShowLogin(!showLogin)}>{showLogin?"Sign Up":"Login"}</button>
    
   </div>
 }

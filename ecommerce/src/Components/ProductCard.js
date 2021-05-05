@@ -10,12 +10,11 @@ export default function ProductCard({item}){
         if(userName==null){
             toast.error("Please Login before adding to cart")
         }
-
         dispatch({type:"ADDTOCART",payload:item})
         
         await axios({
             method: 'post',
-            url: `http://localhost:3000/cart/`,
+            url: `http://localhost:3000/cart/${userName}`,
             data: {
                 item
             }

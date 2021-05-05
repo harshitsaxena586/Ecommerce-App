@@ -1,14 +1,15 @@
 import react, { useState } from "react";
 
-export default function PriceCalculator({ cartItems }) {
+export default function PriceCalculator( {cartItems} ) {
 console.log(cartItems)
 const totalPriceArr=[]
-cartItems.map(item=>totalPriceArr.push(item.price))
+cartItems.map(({item})=>totalPriceArr.push(item.price))
 
 const cartTotal=totalPriceArr.reduce((acc,crr)=>acc+crr)
 
 const shippingPriceArr=[]
-cartItems.map(item=>shippingPriceArr.push(item.shipping))
+cartItems.map(item=>console.log(item))
+cartItems.map(({item})=>  shippingPriceArr.push(item.shipping))
 const shipping=shippingPriceArr.reduce((acc,crr)=>acc+crr)
 console.log(shipping)
 return (

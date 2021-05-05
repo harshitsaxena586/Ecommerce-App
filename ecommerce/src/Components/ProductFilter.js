@@ -82,6 +82,12 @@ console.log(state)
               <span className="category-text"> AIO</span>
             </label>
           </div>
+          <div className="clear" onClick={()=>dispatch({type:"RESETFILTER"})}>
+            <h1>
+            Clear 🔄
+
+            </h1>
+          </div>
         </div>
       );
     }

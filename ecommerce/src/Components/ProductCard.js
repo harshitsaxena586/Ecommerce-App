@@ -27,10 +27,9 @@ export default function ProductCard({item}){
           })
     }
 
-    const notify = () => toast.success(`added to cart`)
     return (
         <div className="product-card ">
-            <img src={item.img}/>
+            <img src={item.img} alt="product-image"/>
         <div className="card-content">
             <h1>
             {item.name}

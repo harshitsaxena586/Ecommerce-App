@@ -26,7 +26,7 @@ const prevSlide =()=>{
     {SliderData.map((slide,index)=>{
       return(
        <div className={index===current ? "slide-active" : "slide"} key={index}> 
-       {index=== current &&(<img src={slide.image} className="featured-image"/>)}
+       {index=== current &&(<img src={slide.image} className="featured-image" alt="feature products"/>)}
         </div>
       )
 

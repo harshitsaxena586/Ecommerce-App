@@ -3,22 +3,22 @@ import { useApp } from "../context/App-context";
 export default function CartCard({ item }) {
   const { item: newItem } = item;
   console.log(newItem);
-  function QuantityHandler() {
-    return (
-      <div>
-        <button>-</button>
-        <span>
-          <h6> {newItem.quantity}</h6>
-        </span>
-        <button>+</button>
-      </div>
-    );
-  }
+  // function QuantityHandler() {
+  //   return (
+  //     <div>
+  //       <button>-</button>
+  //       <span>
+  //         <h6> {newItem.quantity}</h6>
+  //       </span>
+  //       <button>+</button>
+  //     </div>
+  //   );
+  // }
   const { dispatch } = useApp();
   return (
     <div className="cart-card">
       <div className="cart-card-img">
-        <img src={newItem.img} />
+        <img src={newItem.img} alt="cart items images"/>
       </div>
       <div className="cart-card-content">
         <h1>{newItem.name}</h1>

@@ -1,14 +1,13 @@
 import {Link} from 'react-router-dom';
-import { useApp } from "../context/App-context";
 
 
 export default function Navbar(){
-    const {data,setData}=useApp()
+   
     return (
       
     <nav>
     <div className="logo">
-    <img src="https://d33wubrfki0l68.cloudfront.net/52a100676f64b5bf89afb1f5a8692244a457dc84/cba32/logo.d166859b.svg"/>
+    <img src="https://d33wubrfki0l68.cloudfront.net/52a100676f64b5bf89afb1f5a8692244a457dc84/cba32/logo.d166859b.svg" alt="logo" />
     </div>
     
     <ul class="list-tag">

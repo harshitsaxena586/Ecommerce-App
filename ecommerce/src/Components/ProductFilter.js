@@ -2,21 +2,20 @@ import { useEffect, useState } from "react";
 import { useApp } from "../context/App-context";
 
 export default function ProductFilter() {
-    const [inputPrice, setInputPice] = useState(150);
-
+    
     // ------ data sorting---------
       const getSordtedData =(productList,sortby)=>{
-          if(sortby && sortby=="LOWtoHIGH"){
+          if(sortby && sortby==="LOWtoHIGH"){
           return ([...productList].sort((a,b)=>a.price -b.price))
           }
   
-          if(sortby && sortby=="HIGHtoLOW"){
+          if(sortby && sortby==="HIGHtoLOW"){
               return ([...productList].sort((a,b)=>b.price -a.price))
           }
     }
     // Data filter 
       const getFilteredData =(productList,category)=>{
-        if(state.category==null && state.sortby!=null){
+        if(state.category===null && state.sortby!=null){
           return productList
         }
         
@@ -32,7 +31,6 @@ console.log(state)
       // console.log(filteredData)
 
       useEffect(()=>dispatch({type:"FILTERAPPLIED",payload:filteredData}),[state.sortby,state.category])
-
   return (
         <div className="filter-wrap" >
 

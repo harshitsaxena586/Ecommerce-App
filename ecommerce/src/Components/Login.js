@@ -6,8 +6,8 @@ import { useApp } from "../context/App-context";
 
 
 export default function LoginComponent() {
-    const [userName,setUsername]=useState("")
-    const [password,setpassword]=useState("")
+    const [userName,setUsername]=useState()
+    const [password,setpassword]=useState()
     const [userCredentials,setUserCredentials]=useState([])
     const {dispatch}=useApp()
     const loginHandler=(event)=>{

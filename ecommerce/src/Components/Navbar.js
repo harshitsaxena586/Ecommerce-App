@@ -1,5 +1,5 @@
 import react from "react"
-import {Routes,  Route,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { useApp } from "../context/App-context";
 import Cart from "../Pages/Cart";
 import Home from "../Pages/Home";

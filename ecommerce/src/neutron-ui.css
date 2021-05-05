@@ -428,11 +428,19 @@ nav .text-link:hover {
     width: 100vw;
     position: fixed;
     left: 0;
-    background: #f2f2f2;
-    border-top:5px solid #fff;
+    background: rgb(255, 92, 94);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 92, 94, 1) 0%,
+      rgba(245, 97, 191, 1) 100%
+    );
+    border-top: 5px solid #fff;
     bottom: 0;
     margin: 0;
     z-index: 999;
+  }
+  nav{
+    justify-content: center;
   }
   nav .list-tag li {
     margin: auto;

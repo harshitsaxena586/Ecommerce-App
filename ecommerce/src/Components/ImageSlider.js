@@ -19,13 +19,14 @@ const prevSlide =()=>{
 
   return(
     <section className="slider">
-    <button onClick={prevSlide} className={"left-arrow"}>◀</button>
-    <button onClick={nextSlide} className={"right-arrow"}>▶</button>
+    
+    <button onClick={prevSlide} className={"left-arrow"}><i class="fas fa-arrow-left fa-lg "></i></button>
+    <button  className={"right-arrow"}  onClick={nextSlide}><i class="fas fa-arrow-right fa-lg "></i></button>
+   {/* <img src="../assets/left-arrow.svg" className={"right-arrow"}/> */}
     {SliderData.map((slide,index)=>{
       return(
        <div className={index===current ? "slide-active" : "slide"} key={index}> 
-       {index=== current &&(<img src={slide.image}/>)}
-       {index=== current &&(<h1>{slide.title}</h1> )}
+       {index=== current &&(<img src={slide.image} className="featured-image"/>)}
         </div>
       )
 

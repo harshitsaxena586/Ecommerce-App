@@ -30,7 +30,7 @@ export default function CartCard({ item }) {
             <span className="spaced">₹ {newItem.shipping}</span>
           </h2>
           <h2> Esitmated Delivery{newItem.delivery}</h2>
-          <h2> Quantity {newItem.quantity}</h2>
+          <h2> Quantity <span className="spaced">1</span></h2>
         </div>
       </div>
       <div className="price-remove">

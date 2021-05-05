@@ -1,6 +1,7 @@
 import react from "react"
 import ImageSlider from "../Components/ImageSlider"
 import { SliderData } from "../SliderData"
+import {Link} from 'react-router-dom';
 
 export default function Home(){
   
@@ -10,7 +11,7 @@ export default function Home(){
             Featured
          </div>
          <ImageSlider slides={SliderData}/>
-        <img className="V-prop"src="https://ik.imagekit.io/harshit/V-sign_WnMjVbBWle.png"/>
+         <div className="home-cta"><Link to="products"><button >Buy Now  </button>  </Link></div>
       </div>
     )
 }

@@ -19,7 +19,7 @@ export default function LoginComponent() {
   async function serverLogin(){
     await axios({
       method: 'post',
-      url: 'http://localhost:3000/users',
+      url: 'https://jainwin.herokuapp.com/users',
       data: {
       "username":userName,"password":password
       }

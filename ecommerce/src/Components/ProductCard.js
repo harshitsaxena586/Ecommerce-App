@@ -14,7 +14,7 @@ export default function ProductCard({item}){
         
         await axios({
             method: 'post',
-            url: `http://localhost:3000/cart/${userName}`,
+            url: `https://jainwin.herokuapp.com/cart/${userName}`,
             data: {
                 item
             }
@@ -25,7 +25,6 @@ export default function ProductCard({item}){
           })
           .catch(function (error) {
               console.log(error.response)
-             toast.error("Invalid Username or Password")
           })
     }
 

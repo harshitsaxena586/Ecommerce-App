@@ -12,7 +12,7 @@ export default function Cart() {
   async function cartLoadHandler() {
     await axios({
       method: "get",
-      url: `http://localhost:3000/cart/${userName}`,
+      url: `https://jainwin.herokuapp.com/cart/${userName}`,
       data: {}
     })
       .then(function (response) {

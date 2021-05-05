@@ -22,7 +22,7 @@ export default function SignUp() {
   async function serverLogin(){
     await axios({
       method: 'post',
-      url: 'http://localhost:3000/users/s',
+      url: 'https://jainwin.herokuapp.com/users/s',
       data: {
       "userName":userName,"password":password
       }

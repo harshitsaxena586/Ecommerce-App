@@ -372,9 +372,7 @@ body {
   min-width: 22rem;
   margin: 0.5rem 0.2rem;
 }
-input::placeholder {
-  color: #000;
-}
+
 input[type="password"] {
   font-size: 1.2rem;
 }

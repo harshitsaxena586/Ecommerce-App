@@ -1,8 +1,5 @@
-import react from "react"
 import {Link} from 'react-router-dom';
 import { useApp } from "../context/App-context";
-import Cart from "../Pages/Cart";
-import Home from "../Pages/Home";
 
 
 export default function Navbar(){

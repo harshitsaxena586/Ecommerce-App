@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import LoginComponent from "../Components/Login";
 import SignUp from "../Components/Signup";

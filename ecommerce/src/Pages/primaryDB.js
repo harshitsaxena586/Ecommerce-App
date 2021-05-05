@@ -1,4 +1,3 @@
-import react from "react"
 
 export const AllProducts = [{
         name: "Nvidia RTX 3080",

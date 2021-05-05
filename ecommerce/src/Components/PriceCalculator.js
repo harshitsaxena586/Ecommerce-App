@@ -1,4 +1,3 @@
-import react, { useState } from "react";
 
 export default function PriceCalculator( {cartItems} ) {
 console.log(cartItems)

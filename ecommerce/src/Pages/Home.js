@@ -1,4 +1,3 @@
-import react from "react"
 import ImageSlider from "../Components/ImageSlider"
 import { SliderData } from "../SliderData"
 import {Link} from 'react-router-dom';

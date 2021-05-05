@@ -1,4 +1,3 @@
-import react from "react";
 import { useApp } from "../context/App-context";
 
 export default function CartCard({ item }) {

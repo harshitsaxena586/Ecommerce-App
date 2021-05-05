@@ -1,6 +1,5 @@
-import react, { useEffect } from "react"
 import { useApp } from "../context/App-context"
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import axios from "axios";
 
 export default function ProductCard({item}){

@@ -1,4 +1,4 @@
-import react, { createContext, useContext, useReducer } from "react";
+import  { createContext, useContext, useReducer } from "react";
 import { AllProducts } from "../Pages/primaryDB";
 import {  reducer } from "../Reducer/AppReducer";
 

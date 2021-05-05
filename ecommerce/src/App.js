@@ -1,6 +1,6 @@
 import './neutron-ui.css';
 import './App.css';
-import {Routes,  Route,Link} from 'react-router-dom';
+import {Routes,  Route} from 'react-router-dom';
 import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import Navbar from './Components/Navbar';

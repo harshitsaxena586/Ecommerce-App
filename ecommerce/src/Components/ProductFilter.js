@@ -1,6 +1,5 @@
-import react, { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import { useApp } from "../context/App-context";
-import { AllProducts } from "../Pages/primaryDB";
 
 export default function ProductFilter() {
     const [inputPrice, setInputPice] = useState(150);

@@ -1,8 +1,8 @@
-import react, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CartCard from "../Components/CartCard";
 import PriceCalculator from "../Components/PriceCalculator";
 import { useApp } from "../context/App-context";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import axios from "axios";
 export default function Cart() {
   const { state, dispatch } = useApp();

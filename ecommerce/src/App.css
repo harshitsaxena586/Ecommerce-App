@@ -390,8 +390,8 @@ input[type="password"] {
   border-radius: 8px;
   border: none;
 }
-.my-success {
-  min-width: 600px;
+.auth-form div{
+  margin-bottom: 0.8rem;
 }
 
 nav {
@@ -423,7 +423,14 @@ nav a:active {
   transform: translate(0, -15px);
   transition: all ease-in 150ms;
 }
-/* -------mobile styling */
+
+.auth-labels{
+  font-family: var(--font-seconday);
+  margin-left:0.2rem ;
+  opacity: 90%;
+  font-weight: 500;
+}
+/* -------mobile styling --------*/
 @media screen and (max-width: 740px) {
   .login-div input {
     min-width: 18.75rem;

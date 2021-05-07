@@ -7,8 +7,11 @@ import Navbar from './Components/Navbar';
 import Products from './Pages/Products';
 import Login from './Pages/login';
 import  { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
+import axios from "axios";
 
 function App() {
+  
   return (
     <div className="App">
    <div><Toaster/></div>

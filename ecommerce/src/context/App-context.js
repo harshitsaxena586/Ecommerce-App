@@ -7,7 +7,8 @@ const AppContext = createContext();
 const initialState={
   sortby:null,
   category:null,
-  products:AllProducts,
+  products:[],
+  // secondProducts:,
   isFilterApplied:null,
   filteredProducts:false,
   cartItems:[],

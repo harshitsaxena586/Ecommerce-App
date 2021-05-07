@@ -5,17 +5,19 @@ import axios from "axios";
 export default function ProductCard({item}){
     const {state,dispatch}=useApp()
     const userName=(state.userName)
+
     async function cartHandler(item) {
+        item={...item,quantity:1}
         if(userName==null){
             toast.error("Please Login before adding to cart")
         }
-        dispatch({type:"ADDTOCART",payload:item})
         
         await axios({
             method: 'post',
             url: `https://jainwin.herokuapp.com/cart/${userName}`,
+            // url: `localhost:3000/cart/latenightcoding`,
             data: {
-                item
+               item
             }
           })
           .then(function (response) {

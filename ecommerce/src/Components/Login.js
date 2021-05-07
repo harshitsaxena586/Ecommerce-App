@@ -6,11 +6,9 @@ import { useApp } from "../context/App-context";
 export default function LoginComponent() {
   const [userName, setUsername] = useState();
   const [password, setpassword] = useState();
-  const [userCredentials, setUserCredentials] = useState([]);
   const { dispatch } = useApp();
   const loginHandler = (event) => {
     event.preventDefault();
-    setUserCredentials(userName, password);
     serverLogin();
   };
 
@@ -34,7 +32,6 @@ export default function LoginComponent() {
       });
   }
 
-  console.log(userCredentials);
   return (
     <div className="login-div">
       <form className="auth-form" onSubmit={loginHandler}>

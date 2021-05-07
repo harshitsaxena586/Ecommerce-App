@@ -16,10 +16,8 @@ export default function Cart() {
       data: {}
     })
       .then(function (response) {
-        console.log(response.data);
         toast.success("cart loaded succesfully");
         const { cart } = response.data;
-        console.log(cart.itemsInCart);
         setCart(() => cart.itemsInCart);
       })
       .catch(function (error) {
@@ -29,7 +27,7 @@ export default function Cart() {
   }
   useEffect(cartLoadHandler, []);
   const cartItems = cart;
-
+console.log(cartItems)
   return (
     <div className="cart-body">
       {userName == null ? (

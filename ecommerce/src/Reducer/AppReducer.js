@@ -13,7 +13,10 @@ export const reducer= (state,action)=>{
         case "REMOVEFROMCART":
         return {...state,cartItems:state.cartItems.filter(item=>item!=action.payload)}
         case "LOGGEDINUSER":
-        return {...state,userName:action.payload}
+        return {...state,userName:action.payload};
+        case "PRODUCTSLOADED":
+        return{...state,products:action.payload}
+
     }
   }
 

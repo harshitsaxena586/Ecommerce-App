@@ -15,7 +15,7 @@ export default function LoginComponent() {
   async function serverLogin() {
     await axios({
       method: "post",
-      url: "https://jainwin.herokuapp.com/users",
+      url: "https://jainwin-backend.herokuapp.com/users",
       data: {
         username: userName,
         password: password
@@ -61,7 +61,7 @@ export default function LoginComponent() {
           />
         </div>
 
-        <button type="submit" className="login Cta-Cart">
+        <button type="submit" className="login Cta-primary">
           Log in
         </button>
       </form>

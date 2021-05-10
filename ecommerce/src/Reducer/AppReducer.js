@@ -8,10 +8,10 @@ export const reducer= (state,action)=>{
         return {...state,filteredProducts:action.payload};
         case "RESETFILTER":
         return {...state,isFilterApplied:false};
-        case "ADDTOCART":
-        return {...state,cartItems:state.cartItems.concat({...action.payload,quantity:1})}
-        case "REMOVEFROMCART":
-        return {...state,cartItems:state.cartItems.filter(item=>item!=action.payload)}
+        case "CARTUPDATE":
+        return {...state,cart:action.payload}
+        case "DELETEUPDATE":
+        return {...state,cart:state.cart.filter(({item})=>item._id!=action.payload)}
         case "LOGGEDINUSER":
         return {...state,userName:action.payload};
         case "PRODUCTSLOADED":

@@ -164,7 +164,7 @@ body {
   font-weight: 600;
 }
 
-.Cta-Cart {
+.Cta-primary {
   background: rgb(255, 92, 94);
   background: linear-gradient(
     90deg,
@@ -181,7 +181,7 @@ body {
   align-self: flex-start;
 }
 
-.Cta-Cart:active {
+.Cta-primary:active {
   transform: scale(0.7);
 
   transition: all ease-in 150ms;
@@ -482,6 +482,6 @@ nav a:active {
     color: #f5f5f5;
   }
   .Cta-Cart {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
 }

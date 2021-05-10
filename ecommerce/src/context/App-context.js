@@ -1,5 +1,4 @@
 import  { createContext, useContext, useReducer } from "react";
-import { AllProducts } from "../Pages/primaryDB";
 import {  reducer } from "../Reducer/AppReducer";
 
 const AppContext = createContext();
@@ -8,10 +7,9 @@ const initialState={
   sortby:null,
   category:null,
   products:[],
-  // secondProducts:,
   isFilterApplied:null,
-  filteredProducts:false,
-  cartItems:[],
+  filteredProducts:[],
+  cart:[],
   userName:null
 }
 export function AppContextProvider({ children }) {

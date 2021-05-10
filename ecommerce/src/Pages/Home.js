@@ -9,7 +9,6 @@ export default function Home(){
          <div className="featured">
             Featured
          </div>
-
          <ImageSlider slides={SliderData}/>
          <div className="home-cta"><Link to="products"><button >Buy Now  </button>  </Link></div>
       </div>

@@ -7,27 +7,23 @@ export default function SignUp() {
   const [userName, setUsername] = useState("");
   const [password, setpassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const [userCredentials, setUserCredentials] = useState([]);
-  const { dispatch } = useApp();
   const loginHandler = (event) => {
     event.preventDefault();
     if (password == rePassword) {
-      setUserCredentials(userName, password);
-      serverLogin();
+     serverLogin();
     } else toast.error("Both passwords don't match ");
   };
 
   async function serverLogin() {
     await axios({
       method: "post",
-      url: "https://jainwin.herokuapp.com/users/s",
+      url: "https://jainwin-backend.herokuapp.com/users/s",
       data: {
         userName: userName,
         password: password
       }
     })
       .then(function (response) {
-        console.log(response.data);
         toast.success("succesfully Signed Up Welcome !");
       })
       .catch(function (error) {
@@ -35,8 +31,6 @@ export default function SignUp() {
         toast.error("Invalid Username or Password");
       });
   }
-
-  console.log(userCredentials);
   return (
     <div className="login-div">
       <form className="auth-form" onSubmit={loginHandler}>
@@ -80,7 +74,7 @@ export default function SignUp() {
           />
         </div>
 
-        <button type="submit" className="login Cta-Cart">
+        <button type="submit" className="login Cta-primary">
           Sign Up
         </button>
       </form>

@@ -1,9 +1,13 @@
+import axios from "axios";
 import { useApp } from "../context/App-context";
+import toast from 'react-hot-toast';
+import CartLoadHandler from "../api/FetchCart";
 
 export default function CartCard({ item }) {
   const { item: newItem } = item;
-  console.log(newItem);
-  // function QuantityHandler() {
+  const {dispatch,state}=useApp()
+    const userName=(state.userName)
+  // will do later function QuantityHandler() {
   //   return (
   //     <div>
   //       <button>-</button>
@@ -14,7 +18,23 @@ export default function CartCard({ item }) {
   //     </div>
   //   );
   // }
-  const { dispatch } = useApp();
+  async function removeCartHandler(itemId){
+    await axios({
+      method: 'post',
+      url: `https://jainwin-backend.herokuapp.com/cart/${userName}/del`,
+      // url: `http://localhost:3000/cart/latenightcoding/del`,
+      data: {
+        itemId
+      }
+    })
+    .then(function (response) {
+      toast.success("deleted item from cart ")
+      dispatch({type:"DELETEUPDATE",payload:itemId})
+    })
+    .catch(function (error) {
+        console.log(error.response)
+    })
+  }
   return (
     <div className="cart-card">
       <div className="cart-card-img">
@@ -38,7 +58,7 @@ export default function CartCard({ item }) {
         </h2>
         <h2
           className="remove"
-          onClick={() => dispatch({ type: "REMOVEFROMCART", payload: newItem })}
+          onClick={() => removeCartHandler(newItem._id)}
         >
           Remove{" "}
           <svg

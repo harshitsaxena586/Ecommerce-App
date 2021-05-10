@@ -5,13 +5,22 @@ import Home from './Pages/Home';
 import Cart from './Pages/Cart';
 import Navbar from './Components/Navbar';
 import Products from './Pages/Products';
-import Login from './Pages/login';
+import Login from './Pages/Login';
 import  { Toaster } from 'react-hot-toast';
 import { useEffect } from 'react';
 import axios from "axios";
 
 function App() {
-  
+async function serverConnect() {
+  // doing only to wake up the server 
+    axios({
+      method:"GET",
+      url:"https://jainwin-backend.herokuapp.com/"
+    })
+    .then(console.log("Connected to backend server "))
+  }
+
+  useEffect(serverConnect,[])
   return (
     <div className="App">
    <div><Toaster/></div>

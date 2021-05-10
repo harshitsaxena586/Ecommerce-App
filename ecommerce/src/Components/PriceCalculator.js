@@ -1,4 +1,5 @@
 import { loadStripe } from "@stripe/stripe-js";
+import toast from "react-hot-toast";
 
 export default function PriceCalculator( {cartItems} ) {
 
@@ -15,7 +16,6 @@ export default function PriceCalculator( {cartItems} ) {
   );
 
   const data = {
-    img: "https://ik.imagekit.io/harshit/NZXT_h510_jin4J2M4s.png",
     name: "Cart Total",
     price: checkout
   };
@@ -32,15 +32,13 @@ export default function PriceCalculator( {cartItems} ) {
         body: JSON.stringify(data)
       }
     );
-
     const session = await response.json();
 
     // Redirecting To Stripe Checkout .
     const result = await stripe.redirectToCheckout({
       sessionId: session.id
     });
-
-    if (result.error) {
+      if (result.error) {
       console.log("payment Failed to call ");
     }
   };
@@ -53,9 +51,9 @@ export default function PriceCalculator( {cartItems} ) {
         <h2>Cart Subtotal: {cartTotal}</h2>
         <h2>Shipping Charges: {shipping>0?500:"Free"}</h2>
         <hr />
-       <h2>To pay:₹ {shipping+cartTotal}</h2> 
-       <button className="Cta-primary" onClick={handleClick}>Checkout</button>
-      </div>
+       <h2>To pay: ₹ {shipping+cartTotal}</h2> 
+       <button className="Cta-primary checkout" onClick={handleClick}>Checkout</button>
+       </div>
     );
   }
   

@@ -1,6 +1,6 @@
 :root {
-  --font-primary: "Nunito Sans", sans-serif;
-  --font-seconday: "Montserrat", sans-serif;
+  --font-primary: "Montserrat", "sans-serif";
+  --font-secondary:"Nunito", "sans-serif";
   --gradient: linear-gradient(
     90deg,
     rgba(255, 92, 94, 1) 0%,
@@ -22,20 +22,18 @@ body {
 }
 
 .featured {
-  font-family: "montserrat" serrif;
   font-size: 3.25rem;
   display: flex;
-  font-family: "nunito", "serrif";
+  font-family: var(--font-secondary);
   margin-top: 1rem;
   font-weight: 700;
   justify-content: center;
 }
-
 /* SLider Styling */
 
 .slider {
   position: relative;
-  height: 600px;
+  height: 37.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,15 +105,13 @@ body {
   );
   border-radius: 12px;
   border: none;
-  font-size: 22px;
+  font-size: 1.375rem;
   color: #fff;
   font-style: var(--font-primary);
   cursor: pointer;
 }
-/*  */
 .products-page {
   background-color: #f2f2f2;
-  /* background-color: #F8F7F9; */
 }
 /* -------- Product Card -------- */
 .product-card {
@@ -125,7 +121,6 @@ body {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 18px;
-  /* padding: 0.1rem 0.3rem 0.3rem 0.3rem; */
   padding: 1rem;
   width: 213px;
   height: 282px;
@@ -147,20 +142,20 @@ body {
 .card-content h1 {
   margin: 25px 0 3.2px 0;
   font-size: 1.3rem;
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary)
 }
 
 .card-content h3 {
   margin: 3.2px;
   font-size: 1.3rem;
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary);
 }
 
 .card-content h4 {
   margin: 3.2px 0;
   font-size: 1rem;
   color: #1e1e1e;
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary);
   font-weight: 600;
 }
 
@@ -176,7 +171,7 @@ body {
   padding: 6.5px 16px;
   margin: 11px 0 3px;
   font-size: 1.1rem;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-secondary);
   color: #fff;
   align-self: flex-start;
 }
@@ -196,7 +191,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: pink; */
   position: fixed;
   height: 100%;
   width: 18vw;
@@ -220,7 +214,7 @@ body {
 .category-text {
   margin: 0px 12px;
   font-size: 1.15rem;
-  font-family: "montserrat", serif;
+  font-family: var(--font-primary);
   font-weight: 600;
 }
 
@@ -254,7 +248,7 @@ body {
 .sorting-text {
   margin: 0px 12px;
   font-size: 1.15rem;
-  font-family: "montserrat", serif;
+  font-family: var(--font-primary);
   font-weight: 600;
 }
 /* -------------Cart Page styling--------- */
@@ -265,7 +259,6 @@ body {
   min-height: 90vh;
 }
 .cart-summary-wrap {
-  /* background-color: yellow; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -291,18 +284,17 @@ body {
 }
 
 .cart-card-content {
-  /* background: blue; */
   margin-left: 0.8rem;
   flex-grow: 1;
 }
 
 .cart-card-content h2 {
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary);
   font-size: 1.25rem;
 }
 .spaced {
   margin: 0 0.6rem;
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary)f;
 }
 .price-remove {
   display: flex;
@@ -313,7 +305,7 @@ body {
 .price-remove h2 {
   margin: 5px;
   font-size: 1.25rem;
-  font-family: "montserrat", serrif;
+  font-family: var(--font-primary);
 }
 .price-calculator {
   width: 20vw;
@@ -393,8 +385,7 @@ input[type="password"] {
 .login-state {
   margin: 0 auto;
   background-color: #fff;
-  font-size: 20px;
-  /* font-weight: 600; */
+  font-size:1.25rem;
   padding: 1rem 2.5rem;
   border-radius: 8px;
   border: none;
@@ -412,7 +403,7 @@ nav a:any-link {
   color: #1d1c1c;
   font-size: 20px;
   font-weight: 600;
-  font-family: var(--font-seconday);
+  font-family: var(--font-primary);
 }
 
 nav a:active {
@@ -434,7 +425,7 @@ nav a:active {
 }
 
 .auth-labels {
-  font-family: var(--font-seconday);
+  font-family: var(--font-primary);
   margin-left: 0.2rem;
   font-weight: 500;
 }

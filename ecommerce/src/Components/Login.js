@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { useApp } from "../context/App-context";
+import { useApp } from "../Context/AppContextProvider";
 
 export default function LoginComponent() {
   const [userName, setUsername] = useState();

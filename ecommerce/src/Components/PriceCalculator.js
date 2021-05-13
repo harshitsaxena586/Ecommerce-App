@@ -1,5 +1,4 @@
 import { loadStripe } from "@stripe/stripe-js";
-import toast from "react-hot-toast";
 
 export default function PriceCalculator( {cartItems} ) {
 
@@ -19,7 +18,7 @@ export default function PriceCalculator( {cartItems} ) {
     name: "Cart Total",
     price: checkout
   };
-  const handleClick = async (event) => {
+  const checkoutHandler = async (event) => {
    const stripe = await stripePromise;
 
     // Calling Backend to Create Payment Session
@@ -52,7 +51,7 @@ export default function PriceCalculator( {cartItems} ) {
         <h2>Shipping Charges: {shipping>0?500:"Free"}</h2>
         <hr />
        <h2>To pay: ₹ {shipping+cartTotal}</h2> 
-       <button className="Cta-primary checkout" onClick={handleClick}>Checkout</button>
+       <button className="Cta-primary checkout" onClick={checkoutHandler}>Checkout</button>
        </div>
     );
   }

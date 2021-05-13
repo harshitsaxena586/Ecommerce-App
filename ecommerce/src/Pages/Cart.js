@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
+import useCartLoad from "../api/FetchCart";
 import CartCard from "../Components/CartCard";
 import PriceCalculator from "../Components/PriceCalculator";
-import { useApp } from "../context/App-context";
-
-import useCart from "../api/FetchCart";
-import CartLoadHandler from "../api/FetchCart";
+import { useApp } from "../Context/AppContextProvider";
 export default function Cart() {
-  const { state} = useApp();
+  const { state } = useApp();
   const userName = state.userName;
 
-CartLoadHandler()
-const cartItems = state.cart;
+  useCartLoad();
+  const cartItems = state.cart;
   return (
     <div className="cart-body">
       {userName == null ? (
@@ -19,8 +17,7 @@ const cartItems = state.cart;
         </div>
       ) : cartItems.length == 0 ? (
         <div className="empty-cart">
-          <h1>Please add Some products in your cart
-          </h1>
+          <h1>Please add Some products in your cart</h1>
         </div>
       ) : (
         <div>

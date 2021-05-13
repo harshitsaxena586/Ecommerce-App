@@ -1,6 +1,6 @@
 import ProductCard from "../Components/ProductCard";
 import ProductFilter from "../Components/ProductFilter";
-import { useApp } from "../context/App-context";
+import { useApp } from "../Context/AppContextProvider";
 import axios from "axios";
 import { useEffect } from "react";
 
@@ -20,16 +20,10 @@ export default function Products() {
         console.log(error.response);
       });
   }
-  useEffect(
-    () =>
-      state.products.length == 0
-        ? productsload()
-        : console.log("products already loaded"),
-    []
-  );
-  let products =
-    state.isFilterApplied == true ? state.filteredProducts : state.products;
+  useEffect(() => state.products.length == 0 && productsload(), []);
 
+  let products =state.isFilterApplied == true ? state.filteredProducts : state.products;
+  
   return (
     <div className="products-page">
       <ProductFilter />

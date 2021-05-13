@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useApp } from "../context/App-context";
+import { useEffect } from "react";
+import { useApp } from "../Context/AppContextProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-export default async function CartLoadHandler() {
+export default async function useCartLoad() {
   const { state, dispatch } = useApp();
   const userName = state.userName;
   useEffect(async()=>{
@@ -18,7 +18,6 @@ export default async function CartLoadHandler() {
         })
         .catch(function (error) {
           console.log(error.response);
-        //   toast.error("");
         });
   },[])
 }

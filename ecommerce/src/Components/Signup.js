@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
-import { useApp } from "../context/App-context";
 
 export default function SignUp() {
   const [userName, setUsername] = useState("");

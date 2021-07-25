@@ -17,6 +17,8 @@ export const reducer = (state, { payload, type }) => {
       };
     case "LOGGEDINUSER":
       return { ...state, userId: payload };
+    case "LOGGEDOUTUSER":
+      return { ...state, userId: null };
     case "PRODUCTSLOADED":
       return { ...state, products: payload };
     default:

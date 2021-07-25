@@ -2,8 +2,10 @@ import { useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useApp } from "../Context/AppContextProvider";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginComponent() {
+  const navigate = useNavigate();
   const [userName, setUsername] = useState();
   const [password, setpassword] = useState();
   const { dispatch } = useApp();
@@ -13,25 +15,25 @@ export default function LoginComponent() {
   };
 
   async function serverLogin() {
-    await axios({
-      method: "post",
-      url: "https://jainwin-backend.herokuapp.com/users",
-      data: {
-        userName: userName,
-        password: password,
-      },
-    })
-      .then(function (response) {
-        toast.success("succesfully logged in");
-        const { token, userId } = response.data;
-        localStorage.setItem("authToken", token);
-        localStorage.setItem("userId", userId);
-        dispatch({ type: "LOGGEDINUSER", payload: { userId } });
-      })
-      .catch(function (error) {
-        console.log(error.response);
-        toast.error("Invalid Username or Password");
+    try {
+      const response = await axios({
+        method: "post",
+        url: "https://jainwin-backend.herokuapp.com/users",
+        data: {
+          userName: userName,
+          password: password,
+        },
       });
+      toast.success("succesfully logged in");
+      const { token, userId } = response.data;
+      localStorage.setItem("authToken", token);
+      localStorage.setItem("userId", userId);
+      dispatch({ type: "LOGGEDINUSER", payload: { userId } });
+      navigate("/products");
+    } catch (error) {
+      console.log(error.response);
+      toast.error("Invalid Username or Password");
+    }
   }
 
   return (

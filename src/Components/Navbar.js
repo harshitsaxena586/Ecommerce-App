@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
 import { useApp } from "../Context/AppContextProvider";
+import { useNavigate } from "react-router";
+import toast from "react-hot-toast";
+
 export default function Navbar() {
-  const { state } = useApp();
+  const { state, disptach } = useApp();
   const userId = state.userId;
+  const navigate = useNavigate();
+  const logoutHandler = () => {
+    localStorage.clear();
+    navigate("/logout");
+    disptach({ type: "LOGGEDOUTUSER" });
+
+    toast.success("logged out succesfully");
+  };
   return (
     <nav>
       <div className="logo">
@@ -27,11 +38,13 @@ export default function Navbar() {
         </li>
         {userId ? (
           <li className="login-nav">
-            <Link to="/logout">Logout </Link>
+            <Link to="" onClick={() => logoutHandler()}>
+              Logout
+            </Link>
           </li>
         ) : (
           <li className="login-nav">
-            <Link to="login">Login </Link>
+            <Link to="/login">Login </Link>
           </li>
         )}
       </ul>

@@ -5,13 +5,11 @@ import axios from "axios";
 export default function ProductCard({ item }) {
   const { state, dispatch } = useApp();
   let userId = state.userId;
-  console.log(userId, "product");
   async function cartHandler(item) {
     item = { ...item, quantity: 1 };
     if (userId == null) {
       toast.error("Please Login before adding to cart");
     }
-    console.log("itemId", item);
     await axios({
       method: "post",
       url: `https://jainwin-backend.herokuapp.com/cart`,

@@ -3,27 +3,29 @@ import ProductFilter from "../Components/ProductFilter";
 import { useApp } from "../Context/AppContextProvider";
 import axios from "axios";
 import { useEffect } from "react";
-
+import toast from "react-hot-toast";
 export default function Products() {
   const { dispatch, state } = useApp();
 
   async function productsload() {
-    await axios({
-      method: "get",
-      url: "https://jainwin-backend.herokuapp.com/products"
-    })
-      .then(function (response) {
-        const { products } = response.data;
-        dispatch({ type: "PRODUCTSLOADED", payload: products });
-      })
-      .catch(function (error) {
-        console.log(error.response);
-      });
+    const fetchProducts = async () => {
+      const response = await axios.get(
+        "https://jainwin-backend.herokuapp.com/products"
+      );
+      dispatch({ type: "PRODUCTSLOADED", payload: response.data.products });
+    };
+
+    await toast.promise(fetchProducts(), {
+      loading: "Fetching Products",
+      success: "Completed",
+      error: "Error when fetching",
+    });
   }
   useEffect(() => state.products.length == 0 && productsload(), []);
 
-  let products =state.isFilterApplied == true ? state.filteredProducts : state.products;
-  
+  let products =
+    state.isFilterApplied == true ? state.filteredProducts : state.products;
+
   return (
     <div className="products-page">
       <ProductFilter />

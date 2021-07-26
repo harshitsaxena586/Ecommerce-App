@@ -27,13 +27,13 @@ export default function ProductCard({ item }) {
 
   return (
     <div className="product-card ">
-      <img src={item.img} alt="product-image" />
+      <img src={item.img} alt="product" />
       <div className="card-content">
         <h1>{item.name}</h1>
         <h4>{item.highlights}</h4>
         <h3>₹ {item.price}</h3>
       </div>
-      <button onClick={() => cartHandler(item)} className="Cta-primary">
+      <button onClick={() => cartHandler(item)} className="pointer Cta-primary">
         Add To Cart
       </button>
     </div>

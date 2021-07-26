@@ -4,6 +4,15 @@ import toast from "react-hot-toast";
 import { useApp } from "../Context/AppContextProvider";
 import { useNavigate } from "react-router-dom";
 
+// auth Token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1ZXN0VXNlciIsImlkIjoiNjBmZDRkMjBhNjBmOTgwMDE1NWMxYjBmIiwiaWF0IjoxNjI3MjEzMDk0LCJleHAiOjE2MjgwNzcwOTR9.LU1152I24XcT9YMuu3RaMT9MaD9BHRAoAqArrsUbEp4
+// userId = 60fd4d20a60f9800155c1b0f
+export function setGuestLoginData() {
+  localStorage.setItem(
+    "authToken",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1ZXN0VXNlciIsImlkIjoiNjBmZDRkMjBhNjBmOTgwMDE1NWMxYjBmIiwiaWF0IjoxNjI3MjEzMDk0LCJleHAiOjE2MjgwNzcwOTR9.LU1152I24XcT9YMuu3RaMT9MaD9BHRAoAqArrsUbEp4"
+  );
+  localStorage.setItem("userId", "60fd4d20a60f9800155c1b0f");
+}
 export default function LoginComponent() {
   const navigate = useNavigate();
   const [userName, setUsername] = useState();
@@ -64,8 +73,7 @@ export default function LoginComponent() {
             id="Password"
           />
         </div>
-
-        <button type="submit" className="login Cta-primary">
+        <button type="submit" className="login pointer Cta-primary">
           Log in
         </button>
       </form>

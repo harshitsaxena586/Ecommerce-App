@@ -11,7 +11,6 @@ export default function Navbar() {
     localStorage.clear();
     navigate("/logout");
     disptach({ type: "LOGGEDOUTUSER" });
-
     toast.success("logged out succesfully");
   };
   return (

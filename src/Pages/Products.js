@@ -32,7 +32,7 @@ export default function Products() {
       <div className="product-wrap">
         <div className="list-tag">
           {products.map((item) => {
-            return <ProductCard item={item} />;
+            return <ProductCard key={item._id} item={item} />;
           })}
         </div>
       </div>

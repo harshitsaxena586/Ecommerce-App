@@ -178,10 +178,21 @@ body {
 
 .Cta-primary:active {
   transform: scale(0.7);
-
   transition: all ease-in 150ms;
 }
 
+.Cta-secondary {
+  /* background: ; */
+
+  border: 2px solid rgba(255, 92, 95, 0.705);
+  border-radius: 8px;
+  padding: 6.5px 16px;
+  margin: 11px 0 3px;
+  font-size: 1.1rem;
+  font-family: var(--font-secondary);
+  color: rgb(44, 44, 44);
+  align-self: flex-start;
+}
 .product-wrap {
   margin-left: 20vw;
   min-height: 100vh;
@@ -349,7 +360,7 @@ body {
     rgba(255, 92, 94, 1) 0%,
     rgba(245, 97, 191, 1) 100%
   );
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -383,12 +394,16 @@ input[type="password"] {
   font-size: 1.5rem;
 }
 .login-state {
-  margin: 0 auto;
+  margin: 0 1rem;
   background-color: #fff;
   font-size: 1.25rem;
   padding: 1rem 2.5rem;
   border-radius: 8px;
   border: none;
+}
+.login-state-wrap {
+  display: flex;
+  justify-content: center;
 }
 .auth-form div {
   margin-bottom: 0.8rem;
@@ -487,4 +502,7 @@ nav a:active {
 }
 .text-white {
   color: #fff;
+}
+.pointer {
+  cursor: pointer;
 }

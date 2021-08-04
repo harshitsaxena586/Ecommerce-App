@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import useCartLoad from "../api/FetchCart";
 import CartCard from "../Components/CartCard";
 import PriceCalculator from "../Components/PriceCalculator";
 import { useApp } from "../Context/AppContextProvider";
 export default function Cart() {
   const { state } = useApp();
+  const location = useLocation();
+  console.log(location);
   let userId = state.userId;
   useCartLoad();
   const cartItems = state.cart;

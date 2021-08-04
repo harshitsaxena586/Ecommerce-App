@@ -4,14 +4,12 @@ import toast from "react-hot-toast";
 import { useApp } from "../Context/AppContextProvider";
 import { useNavigate } from "react-router-dom";
 
-// auth Token =eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1ZXN0VXNlciIsImlkIjoiNjBmZDRkMjBhNjBmOTgwMDE1NWMxYjBmIiwiaWF0IjoxNjI3MjEzMDk0LCJleHAiOjE2MjgwNzcwOTR9.LU1152I24XcT9YMuu3RaMT9MaD9BHRAoAqArrsUbEp4
-// userId = 60fd4d20a60f9800155c1b0f
 export function setGuestLoginData() {
   localStorage.setItem(
     "authToken",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1ZXN0VXNlciIsImlkIjoiNjBmZDRkMjBhNjBmOTgwMDE1NWMxYjBmIiwiaWF0IjoxNjI3MjEzMDk0LCJleHAiOjE2MjgwNzcwOTR9.LU1152I24XcT9YMuu3RaMT9MaD9BHRAoAqArrsUbEp4"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1c3RVc2VyTG9naW4iLCJpZCI6IjYxMGE4YThjNTAyYWMzMDAxNWUxOTA4OCIsImlhdCI6MTYyODA4MDc4MywiZXhwIjoxNjI4OTQ0NzgzfQ.ii9IiDxEtkHsdEwAUr36xJjPxRgE2TVMYIDyc73YiPI"
   );
-  localStorage.setItem("userId", "60fd4d20a60f9800155c1b0f");
+  localStorage.setItem("userId", "610a8a8c502ac30015e19088");
 }
 export default function LoginComponent() {
   const navigate = useNavigate();

@@ -24,26 +24,50 @@ export default function Navbar() {
 
       <ul class="list-tag">
         <li>
-          {" "}
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <div className="desktop-links">Home</div>
+            <img className="mobile-icons" src="/assets/Home.svg" alt="home" />
+          </Link>
         </li>
         <li>
           {" "}
-          <Link to="products">Products </Link>
+          <Link to="products">
+            <div className="desktop-links">Products</div>
+            <img
+              className="mobile-icons"
+              src="/assets/Shop.svg"
+              alt="producst"
+            />
+          </Link>
         </li>
         <li>
           {" "}
-          <Link to="cart">Cart </Link>
+          <Link to="cart">
+            <div className="desktop-links">Cart</div>
+            <img
+              className="mobile-icons"
+              src="/assets/Shopping-cart.svg"
+              alt="cart"
+            />
+          </Link>
         </li>
         {userId ? (
           <li className="login-nav">
             <Link to="" onClick={() => logoutHandler()}>
-              Logout
+              <div className="desktop-links"> Logout</div>
+              <img
+                className="mobile-icons"
+                src="/assets/logout.svg"
+                alt="home"
+              />
             </Link>
           </li>
         ) : (
           <li className="login-nav">
-            <Link to="/login">Login </Link>
+            <Link to="/login">
+              <div className="desktop-links"> Login</div>
+              <img className="mobile-icons" src="/assets/User.svg" alt="home" />
+            </Link>
           </li>
         )}
       </ul>

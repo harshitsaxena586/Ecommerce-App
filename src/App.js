@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="notification">
         <Toaster />
       </div>
       <Navbar />
@@ -31,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="products" element={<Products />} />
         <Route path="cart" element={<Cart />} />
+        <Route path="cart/successFullOrder" element={<Cart />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
       </Routes>

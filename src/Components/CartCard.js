@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useApp } from "../Context/AppContextProvider";
 import toast from "react-hot-toast";
-import CartLoadHandler from "../api/FetchCart";
 
 export default function CartCard({ item }) {
   const { item: newItem } = item;
@@ -33,6 +32,7 @@ export default function CartCard({ item }) {
         console.log(error.response);
       });
   }
+
   return (
     <div className="cart-card">
       <div className="cart-card-img">
@@ -60,6 +60,7 @@ export default function CartCard({ item }) {
         <h2 className="remove" onClick={() => removeCartHandler(newItem._id)}>
           Remove{" "}
           <svg
+            className="remove-icon"
             width="24"
             height="24"
             viewBox="0 0 24 24"

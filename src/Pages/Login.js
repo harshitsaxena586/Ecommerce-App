@@ -8,9 +8,8 @@ import toast from "react-hot-toast";
 export default function Login() {
   const { dispatch } = useApp();
   const navigate = useNavigate();
-
   const guestLoginHandler = () => {
-    const guestUserId = "60fd4d20a60f9800155c1b0f";
+    const guestUserId = "610a8a8c502ac30015e19088";
     dispatch({ type: "LOGGEDINUSER", payload: { userId: guestUserId } });
     setGuestLoginData();
     toast.success("Logged in successfully as Guest ");

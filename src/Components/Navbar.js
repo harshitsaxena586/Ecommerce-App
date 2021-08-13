@@ -17,7 +17,9 @@ export default function Navbar() {
     <nav>
       <div className="logo">
         <img
-          src="https://ik.imagekit.io/harshit/Group_512218__1__lwDeEZs6Y.svg"
+          src="https://ik.imagekit.io/harshit/logo-group__1__8mZt_GXMs8.svg?updatedAt=1628801984693"
+          // src="https://ik.imagekit.io/harshit/pcing_logo__1__h8q6UGiHhd.svg?updatedAt=1628801824961"
+          // src="https://ik.imagekit.io/harshit/pcing_logo_Ge5q4NomZ.svg?updatedAt=1628801776118"
           alt="logo"
         />
       </div>

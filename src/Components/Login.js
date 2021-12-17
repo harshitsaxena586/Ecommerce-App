@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 export function setGuestLoginData() {
   localStorage.setItem(
     "authToken",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1c3RVc2VyTG9naW4iLCJpZCI6IjYxMGE4YThjNTAyYWMzMDAxNWUxOTA4OCIsImlhdCI6MTYyODA4MDc4MywiZXhwIjoxNjI4OTQ0NzgzfQ.ii9IiDxEtkHsdEwAUr36xJjPxRgE2TVMYIDyc73YiPI"
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imd1ZXN0VXNlciIsImlkIjoiNjBmZDRkMjBhNjBmOTgwMDE1NWMxYjBmIiwiaWF0IjoxNjM5NzYzNzM1LCJleHAiOjE3MDI4Nzg5MzV9.P1-e8wdn-3lfSPV_RTKWWyozT0RTOGW1Su8ypRaZ2IE"
   );
-  localStorage.setItem("userId", "610a8a8c502ac30015e19088");
+  localStorage.setItem("userId", "60fd4d20a60f9800155c1b0f");
 }
 export default function LoginComponent() {
   const navigate = useNavigate();
